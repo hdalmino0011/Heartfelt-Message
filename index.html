@@ -2,601 +2,621 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>✨ PAK YOU KRISTOF GLENDALE BADAYOS ✨</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>PAK YOU · KRISTOF GLENDALE</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      user-select: none; /* modern sleek feel, text can still be selected but fine */
     }
 
     body {
       min-height: 100vh;
-      background: linear-gradient(145deg, #0b0f1c 0%, #1a1f32 100%);
-      font-family: 'Poppins', 'Segoe UI', system-ui, 'Inter', sans-serif;
+      background: radial-gradient(circle at 20% 30%, #0a0f2a, #03050b);
       display: flex;
-      align-items: center;
       justify-content: center;
-      overflow-x: hidden;
-      position: relative;
+      align-items: center;
+      font-family: 'Poppins', 'Segoe UI', 'Inter', system-ui, -apple-system, 'Montserrat', sans-serif;
       padding: 1.5rem;
-    }
-
-    /* animated background particles + vibrant aura */
-    .bg-orb {
-      position: fixed;
-      width: 70vmax;
-      height: 70vmax;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,80,180,0.25) 0%, rgba(0,200,255,0.15) 80%);
-      top: -20vmax;
-      right: -20vmax;
-      z-index: 0;
-      filter: blur(90px);
-      animation: floatGlow 16s infinite alternate ease-in-out;
-    }
-
-    .bg-orb2 {
-      position: fixed;
-      width: 80vmax;
-      height: 80vmax;
-      bottom: -30vmax;
-      left: -25vmax;
-      background: radial-gradient(circle, rgba(255,210,90,0.2) 0%, rgba(90,220,255,0.15) 100%);
-      border-radius: 50%;
-      filter: blur(110px);
-      animation: floatGlow2 19s infinite alternate ease;
-      z-index: 0;
-    }
-
-    @keyframes floatGlow {
-      0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
-      100% { transform: translate(5%, 5%) scale(1.2); opacity: 1; }
-    }
-    @keyframes floatGlow2 {
-      0% { transform: translate(0, 0) scale(0.9); opacity: 0.6; }
-      100% { transform: translate(-3%, -7%) scale(1.3); opacity: 0.9; }
-    }
-
-    /* main glassmorphic card */
-    .hero-card {
       position: relative;
-      z-index: 12;
-      max-width: 880px;
-      width: 100%;
-      background: rgba(20, 25, 45, 0.55);
-      backdrop-filter: blur(16px);
-      border-radius: 3.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      box-shadow: 0 30px 55px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
-      padding: 2rem 2rem 2.8rem;
-      transition: all 0.3s ease;
+      overflow-x: hidden;
     }
 
-    /* dynamic gradient text */
-    .glow-name {
-      font-size: clamp(2.6rem, 8vw, 5rem);
-      font-weight: 800;
+    /* animated grain / noise texture overlay for extra modern feel */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-radial-gradient(circle at 20% 30%, rgba(255,255,255,0.02) 0px, rgba(0,0,0,0.02) 2px, transparent 2px, transparent 6px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .glass-master {
+      position: relative;
+      z-index: 10;
+      max-width: 1000px;
+      width: 100%;
+      background: rgba(12, 20, 35, 0.45);
+      backdrop-filter: blur(14px);
+      border-radius: 4rem;
+      padding: 2rem 1.8rem 2.8rem;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 210, 90, 0.3);
+    }
+
+    /* main title zone */
+    .title-block {
       text-align: center;
+      margin-bottom: 2.2rem;
+    }
+
+    .main-name {
+      font-size: clamp(2.2rem, 10vw, 4.2rem);
+      font-weight: 800;
       letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #FFE6B0, #FFB347, #FF6B8B, #B77CFF, #5DC9FF);
+      background: linear-gradient(135deg, #FFE6B0, #FFB347, #FF6A5C, #C44DFF);
       background-size: 300% 300%;
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      animation: textFlow 8s ease infinite;
+      animation: gradientFlow 6s ease infinite, floatGlow 3s ease-in-out infinite;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
       margin-bottom: 0.5rem;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
     }
 
-    @keyframes textFlow {
+    @keyframes gradientFlow {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    .sub-name {
-      text-align: center;
-      font-size: 1.2rem;
+    @keyframes floatGlow {
+      0% { transform: translateY(0px); text-shadow: 0 0 5px rgba(255,180,70,0.3);}
+      50% { transform: translateY(-5px); text-shadow: 0 0 18px rgba(255,100,100,0.6);}
+      100% { transform: translateY(0px); text-shadow: 0 0 5px rgba(255,180,70,0.3);}
+    }
+
+    .sub-line {
+      font-size: clamp(1rem, 4vw, 1.5rem);
       font-weight: 500;
-      letter-spacing: 2px;
-      color: rgba(255,245,220,0.9);
-      background: rgba(0,0,0,0.3);
-      display: inline-block;
-      width: auto;
-      margin: 0 auto 1rem;
-      padding: 0.3rem 1.5rem;
-      border-radius: 60px;
-      backdrop-filter: blur(4px);
-      font-family: monospace;
-    }
-
-    .tagline {
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: #cfdcff;
-      margin-top: 0.25rem;
-      margin-bottom: 2rem;
-      border-left: 3px solid #f5a65b;
-      border-right: 3px solid #f5a65b;
-      display: inline-block;
-      width: auto;
-      padding: 0.2rem 1rem;
-      background: rgba(0,0,0,0.2);
-      border-radius: 40px;
-    }
-
-    /* animated badge (flex group) */
-    .badge-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1.8rem 0 2rem;
-    }
-
-    .badge {
-      background: linear-gradient(115deg, #2a2f4e, #1f233f);
-      padding: 0.5rem 1.2rem;
-      border-radius: 60px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: #fcd68f;
-      border: 1px solid rgba(255,180,100,0.5);
-      backdrop-filter: blur(5px);
-      transition: 0.2s;
-      cursor: default;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    /* main message area */
-    .message-panel {
-      text-align: center;
-      background: rgba(12, 15, 28, 0.6);
-      border-radius: 2rem;
-      padding: 1.8rem 1.5rem;
-      margin: 1.5rem 0 1.8rem;
-      border: 1px solid rgba(255, 200, 160, 0.3);
-      backdrop-filter: blur(4px);
-      transition: all 0.2s;
-    }
-
-    .dynamic-message {
-      font-size: 1.35rem;
-      line-height: 1.5;
-      font-weight: 500;
-      color: #FFF7E8;
-      word-break: break-word;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .emoji-big {
-      font-size: 2.2rem;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-    }
-
-    /* interactive button row */
-    .interactive-zone {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      margin: 1rem 0 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .cute-btn {
-      background: rgba(255, 220, 150, 0.12);
-      border: 1.5px solid rgba(255, 180, 100, 0.7);
-      padding: 0.75rem 1.8rem;
-      font-weight: 600;
-      font-size: 1rem;
-      border-radius: 50px;
-      color: #FFE3B5;
-      cursor: pointer;
-      transition: 0.2s;
-      backdrop-filter: blur(8px);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: inherit;
-    }
-
-    .cute-btn:hover {
-      background: #ffb34730;
-      border-color: #ffc481;
-      color: white;
-      transform: scale(1.02);
-      box-shadow: 0 4px 14px rgba(255,160,60,0.3);
-    }
-
-    .cute-btn:active {
-      transform: scale(0.97);
-    }
-
-    /* special pulse effect */
-    .pulse-effect {
-      animation: glowPulse 0.65s ease-out 2;
-    }
-
-    @keyframes glowPulse {
-      0% { text-shadow: 0 0 0 rgba(255,200,100,0); }
-      50% { text-shadow: 0 0 18px rgba(255,180,70,0.9); }
-      100% { text-shadow: 0 0 0 rgba(255,200,100,0); }
-    }
-
-    /* counter / fun fact */
-    .energy-meter {
-      display: flex;
-      justify-content: center;
-      align-items: baseline;
-      gap: 1rem;
-      margin-top: 1.2rem;
-      flex-wrap: wrap;
-      font-size: 0.95rem;
-      background: rgba(0,0,0,0.3);
-      padding: 0.8rem 1rem;
-      border-radius: 60px;
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .click-counter {
-      background: #00000044;
-      border-radius: 40px;
-      padding: 0.3rem 1rem;
-      font-weight: 600;
-      color: #ffdca8;
-    }
-
-    .counter-num {
-      font-size: 1.6rem;
-      font-weight: bold;
-      background: linear-gradient(45deg, #ffcb77, #ff9f4a);
+      background: linear-gradient(120deg, #f0f3fa, #ccd6f6);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      margin-right: 4px;
+      letter-spacing: 0.5px;
+      opacity: 0.9;
+      margin-top: 0.3rem;
     }
 
-    /* footer signature */
-    .signature {
+    /* card grid for the two main sentences */
+    .message-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 3rem 0 2rem;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 260px;
+      background: rgba(10, 18, 32, 0.7);
+      backdrop-filter: blur(8px);
+      border-radius: 2.5rem;
+      padding: 1.8rem 1.2rem;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      border: 1px solid rgba(255, 200, 120, 0.4);
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
+      cursor: default;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 160, 80, 0.8);
+      box-shadow: 0 25px 40px -12px rgba(0,0,0,0.6);
+      background: rgba(20, 30, 55, 0.75);
+    }
+
+    .card-phrase {
+      font-size: clamp(1.5rem, 5vw, 2.3rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-description {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #ffcf9a;
+      background: rgba(0,0,0,0.3);
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 60px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* special intense card for the "thangina mo ghago" part */
+    .intense-card {
+      background: linear-gradient(145deg, rgba(40, 15, 55, 0.85), rgba(15, 5, 30, 0.9));
+      border-left: 4px solid #ff4d6d;
+      border-right: 4px solid #ffb347;
+    }
+
+    .intense-card .card-phrase {
+      background: linear-gradient(135deg, #ffb347, #ff6a5c, #ff3b6f);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 8px rgba(255, 70, 70, 0.3);
+      font-weight: 900;
+    }
+
+    /* extra banger element */
+    .signature-tag {
       text-align: center;
       margin-top: 2rem;
-      font-size: 0.75rem;
-      opacity: 0.7;
-      color: #aab3df;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #b7c9e2;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
       letter-spacing: 0.5px;
+      border-top: 1px dashed rgba(255, 190, 100, 0.3);
+      padding-top: 1.6rem;
     }
 
-    /* responsive touches */
-    @media (max-width: 560px) {
-      .hero-card {
+    .signature-tag span {
+      background: rgba(255, 150, 100, 0.2);
+      padding: 0.2rem 1rem;
+      border-radius: 60px;
+      font-weight: 500;
+    }
+
+    /* glitch + glow elements for interactive javascript */
+    .glitch-effect {
+      animation: textGlitch 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    @keyframes textGlitch {
+      0% {
+        text-shadow: -2px 0 red, 2px 0 cyan;
+        transform: skew(0.5deg);
+        opacity: 0.9;
+      }
+      25% {
+        text-shadow: 2px 0 red, -2px 0 cyan;
+        transform: skew(-0.8deg);
+      }
+      50% {
+        text-shadow: -1px 0 magenta, 1px 0 lime;
+        transform: skew(0.3deg);
+      }
+      100% {
+        text-shadow: none;
+        transform: skew(0);
+      }
+    }
+
+    /* floating particles canvas style */
+    #particle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* responsive adjust */
+    @media (max-width: 650px) {
+      .glass-master {
         padding: 1.5rem;
+        border-radius: 2rem;
       }
-      .dynamic-message {
-        font-size: 1.1rem;
+      .message-grid {
+        gap: 1.2rem;
       }
-      .cute-btn {
-        padding: 0.55rem 1.2rem;
-        font-size: 0.85rem;
-      }
-      .badge {
-        font-size: 0.7rem;
+      .card {
+        padding: 1.2rem 0.8rem;
       }
     }
 
-    /* glitter effect */
-    .glitter {
-      background: radial-gradient(circle at 20% 30%, rgba(255,245,180,0.2) 1px, transparent 1px);
-      background-size: 18px 18px;
+    /* shake button or interactive element */
+    .rage-btn {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 100, 100, 0.6);
+      color: #ffbe85;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 0.5rem;
+      backdrop-filter: blur(4px);
+      font-family: inherit;
+    }
+
+    .rage-btn:hover {
+      background: #ff4d6d30;
+      border-color: #ff8c5a;
+      color: white;
+      transform: scale(0.97);
+    }
+
+    footer {
+      font-size: 0.65rem;
+      text-align: center;
+      margin-top: 1rem;
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
-  <div class="bg-orb"></div>
-  <div class="bg-orb2"></div>
 
-  <main class="hero-card">
-    <div style="text-align: center;">
-      <h1 class="glow-name">✨ PAK YOU ✨</h1>
-      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; align-items: baseline;">
-        <span class="sub-name">★ KRISTOF GLENDALE BADAYOS ★</span>
-      </div>
-      <div style="display: flex; justify-content: center;">
-        <span class="tagline">⚡ vibrant energy | limitless spirit ⚡</span>
-      </div>
+  <canvas id="particle-canvas"></canvas>
+
+  <div class="glass-master">
+    <div class="title-block">
+      <div class="main-name" id="glowName">PAK YOU KRISTOF GLENDALE BADAYOS</div>
+      <div class="sub-line">▪ ▪ epic chaos meets vibrant soul ▪ ▪</div>
     </div>
 
-    <!-- decorative badges -->
-    <div class="badge-group">
-      <span class="badge">🎨 MODERN VISIONARY</span>
-      <span class="badge">🔥 COLORFUL AURA</span>
-      <span class="badge">💡 CREATIVE MIND</span>
-      <span class="badge">✨ UNIQUE VIBE</span>
-    </div>
-
-    <!-- dynamic message zone (js enhanced) -->
-    <div class="message-panel" id="messagePanel">
-      <div class="dynamic-message" id="mainMessage">
-        <span class="emoji-big">🌟</span>
-        <span id="messageText">YOU are the brilliance that sparks the universe!</span>
-        <span class="emoji-big">✨</span>
+    <div class="message-grid">
+      <!-- first card: BHUBHU ka Kristof Glendale Badayos -->
+      <div class="card" id="cardBhubhu">
+        <div class="card-phrase" id="bhubhuText">🗣️ BHUBHU ka<br>Kristof Glendale Badayos</div>
+        <div class="card-description">🔥 raw energy · iconic phrase 🔥</div>
+      </div>
+      <!-- second card: thangina mo ghago intense -->
+      <div class="card intense-card" id="cardGhago">
+        <div class="card-phrase" id="ghagoText">⚡ thangina mo ghago ⚡</div>
+        <div class="card-description">‼️ no filter · expressive slam ‼️</div>
       </div>
     </div>
 
-    <!-- interactive buttons & joyful actions -->
-    <div class="interactive-zone">
-      <button class="cute-btn" id="inspireBtn">🌈 INSPIRE ME</button>
-      <button class="cute-btn" id="celebrateBtn">🎉 CELEBRATE VIBE</button>
-      <button class="cute-btn" id="magicBtn">🌀 MAGIC TOUCH</button>
+    <div class="signature-tag">
+      <span>✧ PAK YOU ENERGY ✧</span>
+      <span>⚡ KRISTOF GLENDALE BADAYOS ⚡</span>
+      <span>🔥 BHUBHU THANGINA 🔥</span>
     </div>
-
-    <!-- dynamic counter / cheer meter -->
-    <div class="energy-meter">
-      <span>💖 PAK YOU count : </span>
-      <span class="click-counter">
-        <span class="counter-num" id="cheerCounter">0</span> cheers
-      </span>
-      <span style="margin-left: 0.5rem;">✨</span>
-      <span id="funFact" style="font-style: italic; max-width: 200px;">⭐ click for sparkles</span>
+    
+    <div style="display: flex; justify-content: center; margin-top: 1rem;">
+      <button class="rage-btn" id="rageTrigger">🌀 GLITCH & SHAKE THE TEXT 🌀</button>
     </div>
-
-    <div class="signature">
-      ✨ radiant tribute · always shining ✨
-    </div>
-  </main>
+    <footer>click to amplify chaos · modern rage tribute</footer>
+  </div>
 
   <script>
-    // ========== MODERN COLORFUL JS with deep personality ==========
-    // dynamic message pool for "PAK YOU KRISTOF GLENDALE BADAYOS"
-    const inspireMessages = [
-      { text: "⚡ PAK YOU, KRISTOF! Your energy electrifies every room you enter! ⚡", emoji: "⚡🔥" },
-      { text: "🌈 GLENDALE BADAYOS — a true rainbow in human form, spreading joy everywhere! 🌈", emoji: "🌈✨" },
-      { text: "🌟 KRISTOF, your potential has no limits — keep painting the world with your brilliance! 🌟", emoji: "🎨💫" },
-      { text: "🔊 PAK YOU! You are a masterpiece of courage, color and creativity! 🔊", emoji: "🎨🔥" },
-      { text: "💎 GLENDALE, like a rare gem — your uniqueness lights up the darkest corners. 💎", emoji: "💎✨" },
-      { text: "🚀 BADAYOS, the pioneer of new horizons — nothing can stop your vibrant destiny! 🚀", emoji: "🌠🤩" },
-      { text: "🎵 Your rhythm is unstoppable, Kristof — dance through life with fearless joy! 🎵", emoji: "💃🕺" },
-      { text: "💫 PAK YOU — you blend ambition and kindness like a true hero! 💫", emoji: "🦸‍♂️🌟" },
-      { text: "🌸 GLENDALE BADAYOS — a name that echoes strength, style and sincerity! 🌸", emoji: "🌺💪" },
-      { text: "✨ Every day you inspire, Kristof — keep rising and shining brighter! ✨", emoji: "🌞🌙" }
-    ];
+    (function() {
+      // --- Particle background (modern colorful floating particles)
+      const canvas = document.getElementById('particle-canvas');
+      let ctx = canvas.getContext('2d');
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+      let particles = [];
+      const PARTICLE_COUNT = 90;
 
-    const celebrateMessages = [
-      { text: "🎊 YAAAS! This is YOUR moment, Kristof Glendale! Let confessions of greatness fill the air! 🎊", emoji: "🎉🎈" },
-      { text: "🍾 CHEERS to the legendary BADAYOS — may your life be as vibrant as this palette! 🍾", emoji: "🥂🌈" },
-      { text: "🎶 *Epic beat drop* — celebrating YOU, Kristof, a modern icon of color and passion! 🎶", emoji: "🎧🔥" },
-      { text: "🎂 HAPPY VIBES only! PAK YOU KRISTOF — your journey is pure art! 🎂", emoji: "🎨🎁" },
-      { text: "🏆 GLENDALE is unstoppable! Raise the roof for the brightest star! 🏆", emoji: "🌟🙌" }
-    ];
-
-    const magicMessages = [
-      { text: "🌀✨ *sparkles intensifies* — KRISTOF GLENDALE, your aura just turned into a galaxy of dreams! ✨🌀", emoji: "🌌💫" },
-      { text: "⭐ MAGIC WORD: PAK YOU! Suddenly confetti rains and everything becomes extraordinary! ⭐", emoji: "🎊🪄" },
-      { text: "🪄✨ Abracadabra! Kristof, with a snap, your future glows neon bright! ✨🪄", emoji: "🔮🌈" },
-      { text: "💥 GLENDALE BADAYOS just cast a spell of endless creativity — watch the world bloom! 💥", emoji: "🌸🌟" },
-      { text: "🎩✨ POOF! A thousand butterflies of good fortune swirl around KRISTOF — you're magic! 🎩✨", emoji: "🦋✨" }
-    ];
-
-    // DOM elements
-    const messageTextSpan = document.getElementById('messageText');
-    const messageEmojiLeft = document.querySelector('#mainMessage .emoji-big:first-child');
-    const messageEmojiRight = document.querySelector('#mainMessage .emoji-big:last-child');
-    const cheerCounterSpan = document.getElementById('cheerCounter');
-    const funFactSpan = document.getElementById('funFact');
-    const inspireBtn = document.getElementById('inspireBtn');
-    const celebrateBtn = document.getElementById('celebrateBtn');
-    const magicBtn = document.getElementById('magicBtn');
-    const mainMsgContainer = document.getElementById('mainMessage');
-
-    // counter data
-    let cheerCount = 0;
-    let funFactIndex = 0;
-
-    // Helper: update message with text and left/right emojis
-    function setMessage(messageObj) {
-      if (!messageObj) return;
-      let finalText = messageObj.text;
-      let emojiString = messageObj.emoji || "✨";
-      // support emoji split for two sides style
-      let leftEmoji = emojiString[0] || "✨";
-      let rightEmoji = emojiString.length > 1 ? emojiString[emojiString.length-1] : (emojiString[1] || "✨");
-      // but we want beautiful presentation: sometimes emoji string can be 2-3 chars
-      if (emojiString.length >= 2) {
-        leftEmoji = emojiString.substring(0,1);
-        rightEmoji = emojiString.substring(emojiString.length-1);
-      } else {
-        leftEmoji = emojiString;
-        rightEmoji = emojiString;
+      function resizeCanvas() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
       }
-      if (messageEmojiLeft) messageEmojiLeft.innerText = leftEmoji;
-      if (messageEmojiRight) messageEmojiRight.innerText = rightEmoji;
-      messageTextSpan.innerText = finalText;
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+          this.size = Math.random() * 6 + 2;
+          this.speedX = (Math.random() - 0.5) * 0.6;
+          this.speedY = (Math.random() - 0.5) * 0.4 + (Math.random() > 0.7 ? 0.2 : -0.1);
+          this.color = `hsla(${Math.random() * 360}, 80%, 65%, ${Math.random() * 0.4 + 0.2})`;
+          this.alpha = Math.random() * 0.5 + 0.2;
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.x < -20) this.x = width + 20;
+          if (this.x > width + 20) this.x = -20;
+          if (this.y < -20) this.y = height + 20;
+          if (this.y > height + 20) this.y = -20;
+          // gentle floaty drift
+        }
+        draw() {
+          if (!ctx) return;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = "rgba(255,180,80,0.5)";
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+      }
+
+      function initParticles() {
+        particles = [];
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function animateParticles() {
+        if (!ctx) return;
+        ctx.clearRect(0, 0, width, height);
+        for (let p of particles) {
+          p.update();
+          p.draw();
+        }
+        requestAnimationFrame(animateParticles);
+      }
+
+      function setupParticles() {
+        resizeCanvas();
+        initParticles();
+        animateParticles();
+      }
+      window.addEventListener('resize', () => {
+        resizeCanvas();
+        initParticles();
+      });
+      setupParticles();
+
+      // -------- MODERN DYNAMIC TEXT EFFECTS + GLITCH + SHAKE + RAINBOW OVERLAY ----------
+      const nameElement = document.querySelector('.main-name');     // main "PAK YOU KRISTOF GLENDALE BADAYOS"
+      const bhubhuElement = document.getElementById('bhubhuText');
+      const ghagoElement = document.getElementById('ghagoText');
+      const rageBtn = document.getElementById('rageTrigger');
       
-      // add subtle pulse animation on text
-      messageTextSpan.classList.add('pulse-effect');
-      setTimeout(() => {
-        if (messageTextSpan) messageTextSpan.classList.remove('pulse-effect');
-      }, 600);
-    }
-
-    // random item from array helper
-    function randomFrom(arr) {
-      return arr[Math.floor(Math.random() * arr.length)];
-    }
-
-    // increments click counter and updates fun fact rotating
-    function incrementCheerAndFact() {
-      cheerCount++;
-      cheerCounterSpan.innerText = cheerCount;
+      // Store original texts
+      const originalMain = nameElement.innerText;
+      const originalBhubhu = bhubhuElement.innerHTML;  // contains <br> but we keep structure
+      const originalGhago = ghagoElement.innerText;
       
-      // update fun fact based on counter (colorful trivia)
-      const funFactsList = [
-        "🌈 Did you know? Kristof means 'bearer of Christ' — a bright leader!",
-        "💡 Glendale: 'valley of shining water' — so much light!",
-        "🎨 BADAYOS signifies fierce determination and creative roots.",
-        "🔥 PAK YOU is all about vibrant confidence and style!",
-        "✨ Spark Fact: Every cheer adds a new color to the universe!",
-        "🌟 Kristof Glendale radiates next-level awesomeness daily.",
-        "⭐ FUN: The name 'Kristof' appears in many legends — adventure calls!",
-        "🌀 Modern design + you = perfect match! Keep shining!"
-      ];
-      // rotate facts
-      funFactIndex = (funFactIndex + 1) % funFactsList.length;
-      funFactSpan.innerText = funFactsList[funFactIndex];
-      // also add mini bounce effect to counter
-      const counterSpanEl = document.getElementById('cheerCounter');
-      if (counterSpanEl) {
-        counterSpanEl.style.transform = 'scale(1.2)';
-        setTimeout(() => { if(counterSpanEl) counterSpanEl.style.transform = 'scale(1)'; }, 180);
+      // Helper to apply glitch class for short period
+      function applyGlitchEffect(element, duration = 220) {
+        if (!element) return;
+        element.classList.add('glitch-effect');
+        setTimeout(() => {
+          element.classList.remove('glitch-effect');
+        }, duration);
       }
-    }
-
-    // action: pick random message from given set, increment counter, and setMessage
-    function actionWithSetMessage(messageSet, baseExtraMessage = null) {
-      let selected = randomFrom(messageSet);
-      // we can add a little dynamic personalization for extra fun
-      incrementCheerAndFact();
-      setMessage(selected);
-      // additional micro animation for button and panel
-      const panel = document.getElementById('messagePanel');
-      panel.style.transform = 'scale(0.99)';
-      setTimeout(() => { if(panel) panel.style.transform = ''; }, 120);
-    }
-
-    // also special periodic background color flicker? just little fun effect
-    function randomGlowEffect() {
-      const card = document.querySelector('.hero-card');
-      if (!card) return;
-      card.style.transition = 'box-shadow 0.2s';
-      card.style.boxShadow = '0 0 20px rgba(255, 180, 100, 0.6), 0 30px 55px rgba(0,0,0,0.4)';
-      setTimeout(() => {
-        if (card) card.style.boxShadow = '';
-      }, 300);
-    }
-
-    // custom message on inspire + extra warmth always displays PAK YOU with name
-    function inspireAction() {
-      let baseMessage = randomFrom(inspireMessages);
-      // enhance with name for coherence: ensure we mention full identity
-      if (!baseMessage.text.toLowerCase().includes('kristof') && !baseMessage.text.toLowerCase().includes('glendale')) {
-        baseMessage.text = baseMessage.text.replace('you', 'you, KRISTOF GLENDALE BADAYOS');
+      
+      // temporary "shake" effect on card containers (bouncy)
+      function shakeCard(cardElement) {
+        if (!cardElement) return;
+        cardElement.style.transform = 'translateX(4px)';
+        setTimeout(() => { cardElement.style.transform = ''; }, 80);
+        setTimeout(() => { if(cardElement) cardElement.style.transform = 'translateX(-4px)'; }, 160);
+        setTimeout(() => { if(cardElement) cardElement.style.transform = ''; }, 240);
       }
-      actionWithSetMessage([baseMessage]);
-      randomGlowEffect();
-    }
-
-    function celebrateAction() {
-      let selected = randomFrom(celebrateMessages);
-      // enrich with name mixture
-      if (!selected.text.includes('Kristof')) {
-        selected.text = selected.text.replace(/legendary/i, 'legendary Kristof Glendale');
+      
+      // Full chaotic burst: random color flashes on background cards & text switcharoo mini effect?
+      function rageMode() {
+        // glitch all three primary texts
+        applyGlitchEffect(nameElement, 300);
+        applyGlitchEffect(bhubhuElement, 280);
+        applyGlitchEffect(ghagoElement, 280);
+        
+        // shake the cards physical feeling
+        const card1 = document.getElementById('cardBhubhu');
+        const card2 = document.getElementById('cardGhago');
+        shakeCard(card1);
+        shakeCard(card2);
+        
+        // Also extra shaking on main title block container
+        const titleContainer = document.querySelector('.title-block');
+        if(titleContainer) {
+          titleContainer.style.transform = 'translateX(3px)';
+          setTimeout(() => { if(titleContainer) titleContainer.style.transform = ''; }, 100);
+          setTimeout(() => { if(titleContainer) titleContainer.style.transform = 'translateX(-3px)'; }, 200);
+          setTimeout(() => { if(titleContainer) titleContainer.style.transform = ''; }, 300);
+        }
+        
+        // random color overlay flash effect (modern pulse)
+        const flashOverlay = document.createElement('div');
+        flashOverlay.style.position = 'fixed';
+        flashOverlay.style.top = '0';
+        flashOverlay.style.left = '0';
+        flashOverlay.style.width = '100%';
+        flashOverlay.style.height = '100%';
+        flashOverlay.style.pointerEvents = 'none';
+        flashOverlay.style.zIndex = '999';
+        flashOverlay.style.mixBlendMode = 'overlay';
+        flashOverlay.style.background = `radial-gradient(circle at 30% 40%, rgba(255, 80, 120, 0.4), rgba(255, 200, 80, 0.2), transparent)`;
+        flashOverlay.style.opacity = '0';
+        flashOverlay.style.transition = 'opacity 0.08s linear';
+        document.body.appendChild(flashOverlay);
+        flashOverlay.style.opacity = '0.8';
+        setTimeout(() => {
+          flashOverlay.style.opacity = '0';
+          setTimeout(() => flashOverlay.remove(), 200);
+        }, 150);
+        
+        // additionally, replace temporarily the text with glitched version for a split second? creates "chaos"
+        const tempMain = nameElement.innerText;
+        const tempBhubhuInner = bhubhuElement.innerHTML;
+        const tempGhago = ghagoElement.innerText;
+        
+        // glitched variants (extra fun)
+        nameElement.innerText = "P4K Y0U KR1ST0F GL3ND4L3 B4D4Y05 💢";
+        bhubhuElement.innerHTML = "B H U B H U  K A  👊 KRISTOF GLENDALE BADAYOS ⚡";
+        ghagoElement.innerText = "THANG!NA M0 GHAG0 🔥🔥";
+        
+        setTimeout(() => {
+          nameElement.innerText = tempMain;
+          bhubhuElement.innerHTML = tempBhubhuInner;
+          ghagoElement.innerText = tempGhago;
+        }, 180);
+        
+        // play additional particle burst effect: create 20 extra spark particles for fun
+        for(let i = 0; i < 22; i++) {
+          const burstPart = {
+            x: Math.random() * width,
+            y: Math.random() * height,
+            radius: Math.random() * 7 + 2,
+            alpha: 1,
+            life: 1,
+            color: `hsl(${Math.random() * 360}, 90%, 65%)`
+          };
+          drawTempSpark(burstPart);
+        }
       }
-      actionWithSetMessage([selected]);
-      // create a mini confetti-like effect using simple DOM sprites? we can simulate with colorful alert? no, better create flying word effect.
-      createTemporarySparkle();
-      randomGlowEffect();
-    }
-
-    function magicAction() {
-      let selected = randomFrom(magicMessages);
-      if (!selected.text.toLowerCase().includes('glendale')) {
-        selected.text = selected.text + " ✨ For GLENDALE BADAYOS! ✨";
+      
+      function drawTempSpark(spark) {
+        let life = 1;
+        let radiusSpark = spark.radius;
+        let x = spark.x;
+        let y = spark.y;
+        function animateSpark() {
+          if (!ctx) return;
+          if (life <= 0) return;
+          life -= 0.035;
+          radiusSpark *= 0.98;
+          ctx.save();
+          ctx.globalAlpha = life * 0.7;
+          ctx.beginPath();
+          ctx.arc(x, y, radiusSpark, 0, Math.PI * 2);
+          ctx.fillStyle = spark.color;
+          ctx.shadowBlur = 12;
+          ctx.fill();
+          ctx.restore();
+          if (life > 0) requestAnimationFrame(animateSpark);
+        }
+        animateSpark();
       }
-      actionWithSetMessage([selected]);
-      // additional rainbow effect for fun
-      document.body.style.animation = 'bgFlash 0.4s ease';
-      setTimeout(() => { document.body.style.animation = ''; }, 400);
-      randomGlowEffect();
-    }
-
-    // extra style for quick flash
-    const styleSheet = document.createElement("style");
-    styleSheet.textContent = `
-      @keyframes bgFlash {
-        0% { background: #0b0f1c; }
-        50% { background: #2a2350; }
-        100% { background: #0b0f1c; }
+      
+      // attach event listener to button
+      rageBtn.addEventListener('click', rageMode);
+      
+      // also if user clicks on any of the cards, we can trigger mild effect and make it extra interactive
+      const cardB = document.getElementById('cardBhubhu');
+      const cardG = document.getElementById('cardGhago');
+      
+      function mildBuff(element, textElement) {
+        if(textElement) applyGlitchEffect(textElement, 180);
+        if(element) {
+          element.style.transform = 'scale(0.98)';
+          setTimeout(() => { if(element) element.style.transform = ''; }, 150);
+        }
+        // extra flash border
+        element.style.transition = 'border 0.1s';
+        element.style.borderColor = '#ffa96e';
+        setTimeout(() => { if(element) element.style.borderColor = ''; }, 200);
       }
-      .sparkle-particle {
-        position: fixed;
-        pointer-events: none;
-        font-size: 1.4rem;
-        z-index: 999;
-        animation: floatUp 0.8s ease-out forwards;
-      }
-      @keyframes floatUp {
-        0% { opacity: 1; transform: translateY(0px) rotate(0deg); }
-        100% { opacity: 0; transform: translateY(-70px) rotate(20deg); }
-      }
-    `;
-    document.head.appendChild(styleSheet);
-
-    function createTemporarySparkle() {
-      for (let i = 0; i < 12; i++) {
-        const spark = document.createElement('div');
-        spark.className = 'sparkle-particle';
-        spark.innerText = ['✨', '⭐', '🌟', '💫', '🎉', '🌈', '🔥', '💖'][Math.floor(Math.random() * 8)];
-        spark.style.left = Math.random() * window.innerWidth + 'px';
-        spark.style.top = window.innerHeight - 80 + 'px';
-        spark.style.fontSize = (1 + Math.random() * 1.2) + 'rem';
-        spark.style.position = 'fixed';
-        document.body.appendChild(spark);
-        setTimeout(() => spark.remove(), 800);
-      }
-    }
-
-    // auto-rotate greeting on load? adds fresh start
-    function initialWarmMessage() {
-      const introMsg = {
-        text: "✨ PAK YOU, KRISTOF GLENDALE BADAYOS! You are the definition of modern color & soul! ✨",
-        emoji: "🌈🌟"
-      };
-      setMessage(introMsg);
-      cheerCounterSpan.innerText = "0";
-      funFactSpan.innerText = "⭐ tap any button and spread joy! ⭐";
-    }
-
-    // attach event listeners
-    inspireBtn.addEventListener('click', inspireAction);
-    celebrateBtn.addEventListener('click', celebrateAction);
-    magicBtn.addEventListener('click', magicAction);
-    
-    // additional hover effect dynamic
-    const allBtns = document.querySelectorAll('.cute-btn');
-    allBtns.forEach(btn => {
-      btn.addEventListener('mouseenter', (e) => {
-        btn.style.transform = 'translateY(-3px)';
+      
+      cardB.addEventListener('click', () => {
+        mildBuff(cardB, bhubhuElement);
+        // minor additional shaking phrase iconic
+        const tempStore = bhubhuElement.innerHTML;
+        bhubhuElement.innerHTML = "‼️ BHUBHU KA TALAGA ‼️";
+        setTimeout(() => { bhubhuElement.innerHTML = tempStore; }, 200);
       });
-      btn.addEventListener('mouseleave', () => {
-        btn.style.transform = '';
+      
+      cardG.addEventListener('click', () => {
+        mildBuff(cardG, ghagoElement);
+        const oldGh = ghagoElement.innerText;
+        ghagoElement.innerText = "THANGINA MO GHAGO 🗣️🔥";
+        setTimeout(() => { ghagoElement.innerText = oldGh; }, 200);
       });
-    });
-    
-    // initial load message
-    initialWarmMessage();
-
-    // Optional: extra surprise after double click on title? just for delight
-    const titleGlow = document.querySelector('.glow-name');
-    if(titleGlow) {
-      titleGlow.addEventListener('dblclick', () => {
-        createTemporarySparkle();
-        setMessage({ text: "🔥 DOUBLE TAP 🔥 — KRISTOF GLENDALE IS A SUPERSTAR! ✨", emoji: "💥🎇" });
-        incrementCheerAndFact();
-        randomGlowEffect();
+      
+      // also double click on main name does full rage but with extra celebration
+      nameElement.addEventListener('dblclick', () => {
+        rageMode();
+        // add extra vibration feel
+        nameElement.style.animation = 'none';
+        nameElement.offsetHeight; // reflow
+        nameElement.style.animation = 'gradientFlow 6s ease infinite, floatGlow 3s ease-in-out infinite';
+        // extra particle shower
+        for(let i = 0; i < 40; i++) {
+          const sp = {
+            x: Math.random() * width,
+            y: Math.random() * height,
+            radius: Math.random() * 10 + 2,
+            alpha: 0.9,
+            life: 1,
+            color: `hsl(${Math.random() * 360}, 100%, 70%)`
+          };
+          drawTempSpark(sp);
+        }
       });
-    }
-
-    // add a floating effect to the main card when window resets
-    window.addEventListener('resize', () => {});
-    console.log("✨ PAK YOU KRISTOF GLENDALE BADAYOS | Modern Colorful Experience Loaded ✨");
+      
+      // floating hover effect on cards makes them even more reactive
+      const allCards = document.querySelectorAll('.card');
+      allCards.forEach(card => {
+        card.addEventListener('mouseenter', (e) => {
+          card.style.transition = 'all 0.2s cubic-bezier(0.2, 1, 0.3, 1)';
+        });
+      });
+      
+      // automatic color breathing effect for background card gradients (cannot be too heavy - but minor pulse)
+      let hue = 0;
+      setInterval(() => {
+        // very subtle background hue shift for .glass-master border
+        const masterDiv = document.querySelector('.glass-master');
+        if(masterDiv) {
+          let newHue = (hue % 360);
+          masterDiv.style.boxShadow = `0 30px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px hsla(${newHue}, 70%, 65%, 0.25)`;
+          hue = (hue + 1) % 360;
+        }
+      }, 120);
+      
+      // ensure that the text stays legible with all animations: also apply some random console greetings
+      console.log("%c🔥 PAK YOU KRISTOF GLENDALE BADAYOS 🔥 BHUBHU ka thangina mo ghago", "color: #ffaa66; font-size: 16px; font-weight: bold;");
+      
+      // random mild glitch every 12 seconds just for fun (shows chaos)
+      setInterval(() => {
+        if(Math.random() > 0.65) {
+          // occasional mini glitch without fullscreen flash
+          applyGlitchEffect(nameElement, 150);
+          applyGlitchEffect(bhubhuElement, 120);
+          applyGlitchEffect(ghagoElement, 120);
+        }
+      }, 10000);
+      
+      // final: also add dynamic gradient to rage button itself
+      rageBtn.style.transition = 'all 0.2s';
+      rageBtn.addEventListener('mousedown', () => {
+        rageBtn.style.transform = 'scale(0.95)';
+        rageBtn.style.background = '#ff4d6d60';
+      });
+      rageBtn.addEventListener('mouseup', () => {
+        rageBtn.style.transform = '';
+        rageBtn.style.background = '';
+      });
+      
+      // preload any missing, and colorize the main long text with plus sign
+      // ensure that the text "PAK YOU KRISTOF GLENDALE BADAYOS" also has glitch protection
+      // all good.
+      
+      // also add custom style to keep responsive particle canvas on resize repaint:
+      window.addEventListener('resize', () => {
+        if(particles) {
+          // adjust existing particles random relocation for better fit
+          for(let p of particles) {
+            if(p.x > width) p.x = width - 10;
+            if(p.y > height) p.y = height - 10;
+          }
+        }
+      });
+      
+      // add subtle tooltip? optional
+      rageBtn.title = "click to unleash devastating glitch & shake!";
+    })();
   </script>
 </body>
 </html>
