@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>✨ PAK YOU KRISTOF GLENDALE BADAYOS ✨</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #0b0f1c 0%, #1a1f32 100%);
+      font-family: 'Poppins', 'Segoe UI', system-ui, 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      position: relative;
+      padding: 1.5rem;
+    }
+
+    /* animated background particles + vibrant aura */
+    .bg-orb {
+      position: fixed;
+      width: 70vmax;
+      height: 70vmax;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,80,180,0.25) 0%, rgba(0,200,255,0.15) 80%);
+      top: -20vmax;
+      right: -20vmax;
+      z-index: 0;
+      filter: blur(90px);
+      animation: floatGlow 16s infinite alternate ease-in-out;
+    }
+
+    .bg-orb2 {
+      position: fixed;
+      width: 80vmax;
+      height: 80vmax;
+      bottom: -30vmax;
+      left: -25vmax;
+      background: radial-gradient(circle, rgba(255,210,90,0.2) 0%, rgba(90,220,255,0.15) 100%);
+      border-radius: 50%;
+      filter: blur(110px);
+      animation: floatGlow2 19s infinite alternate ease;
+      z-index: 0;
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+      100% { transform: translate(5%, 5%) scale(1.2); opacity: 1; }
+    }
+    @keyframes floatGlow2 {
+      0% { transform: translate(0, 0) scale(0.9); opacity: 0.6; }
+      100% { transform: translate(-3%, -7%) scale(1.3); opacity: 0.9; }
+    }
+
+    /* main glassmorphic card */
+    .hero-card {
+      position: relative;
+      z-index: 12;
+      max-width: 880px;
+      width: 100%;
+      background: rgba(20, 25, 45, 0.55);
+      backdrop-filter: blur(16px);
+      border-radius: 3.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 30px 55px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      padding: 2rem 2rem 2.8rem;
+      transition: all 0.3s ease;
+    }
+
+    /* dynamic gradient text */
+    .glow-name {
+      font-size: clamp(2.6rem, 8vw, 5rem);
+      font-weight: 800;
+      text-align: center;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFE6B0, #FFB347, #FF6B8B, #B77CFF, #5DC9FF);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: textFlow 8s ease infinite;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    @keyframes textFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .sub-name {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: rgba(255,245,220,0.9);
+      background: rgba(0,0,0,0.3);
+      display: inline-block;
+      width: auto;
+      margin: 0 auto 1rem;
+      padding: 0.3rem 1.5rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      font-family: monospace;
+    }
+
+    .tagline {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #cfdcff;
+      margin-top: 0.25rem;
+      margin-bottom: 2rem;
+      border-left: 3px solid #f5a65b;
+      border-right: 3px solid #f5a65b;
+      display: inline-block;
+      width: auto;
+      padding: 0.2rem 1rem;
+      background: rgba(0,0,0,0.2);
+      border-radius: 40px;
+    }
+
+    /* animated badge (flex group) */
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.8rem 0 2rem;
+    }
+
+    .badge {
+      background: linear-gradient(115deg, #2a2f4e, #1f233f);
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #fcd68f;
+      border: 1px solid rgba(255,180,100,0.5);
+      backdrop-filter: blur(5px);
+      transition: 0.2s;
+      cursor: default;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* main message area */
+    .message-panel {
+      text-align: center;
+      background: rgba(12, 15, 28, 0.6);
+      border-radius: 2rem;
+      padding: 1.8rem 1.5rem;
+      margin: 1.5rem 0 1.8rem;
+      border: 1px solid rgba(255, 200, 160, 0.3);
+      backdrop-filter: blur(4px);
+      transition: all 0.2s;
+    }
+
+    .dynamic-message {
+      font-size: 1.35rem;
+      line-height: 1.5;
+      font-weight: 500;
+      color: #FFF7E8;
+      word-break: break-word;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .emoji-big {
+      font-size: 2.2rem;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    }
+
+    /* interactive button row */
+    .interactive-zone {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      margin: 1rem 0 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cute-btn {
+      background: rgba(255, 220, 150, 0.12);
+      border: 1.5px solid rgba(255, 180, 100, 0.7);
+      padding: 0.75rem 1.8rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 50px;
+      color: #FFE3B5;
+      cursor: pointer;
+      transition: 0.2s;
+      backdrop-filter: blur(8px);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: inherit;
+    }
+
+    .cute-btn:hover {
+      background: #ffb34730;
+      border-color: #ffc481;
+      color: white;
+      transform: scale(1.02);
+      box-shadow: 0 4px 14px rgba(255,160,60,0.3);
+    }
+
+    .cute-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* special pulse effect */
+    .pulse-effect {
+      animation: glowPulse 0.65s ease-out 2;
+    }
+
+    @keyframes glowPulse {
+      0% { text-shadow: 0 0 0 rgba(255,200,100,0); }
+      50% { text-shadow: 0 0 18px rgba(255,180,70,0.9); }
+      100% { text-shadow: 0 0 0 rgba(255,200,100,0); }
+    }
+
+    /* counter / fun fact */
+    .energy-meter {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+      background: rgba(0,0,0,0.3);
+      padding: 0.8rem 1rem;
+      border-radius: 60px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .click-counter {
+      background: #00000044;
+      border-radius: 40px;
+      padding: 0.3rem 1rem;
+      font-weight: 600;
+      color: #ffdca8;
+    }
+
+    .counter-num {
+      font-size: 1.6rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ffcb77, #ff9f4a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-right: 4px;
+    }
+
+    /* footer signature */
+    .signature {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.75rem;
+      opacity: 0.7;
+      color: #aab3df;
+      letter-spacing: 0.5px;
+    }
+
+    /* responsive touches */
+    @media (max-width: 560px) {
+      .hero-card {
+        padding: 1.5rem;
+      }
+      .dynamic-message {
+        font-size: 1.1rem;
+      }
+      .cute-btn {
+        padding: 0.55rem 1.2rem;
+        font-size: 0.85rem;
+      }
+      .badge {
+        font-size: 0.7rem;
+      }
+    }
+
+    /* glitter effect */
+    .glitter {
+      background: radial-gradient(circle at 20% 30%, rgba(255,245,180,0.2) 1px, transparent 1px);
+      background-size: 18px 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-orb"></div>
+  <div class="bg-orb2"></div>
+
+  <main class="hero-card">
+    <div style="text-align: center;">
+      <h1 class="glow-name">✨ PAK YOU ✨</h1>
+      <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; align-items: baseline;">
+        <span class="sub-name">★ KRISTOF GLENDALE BADAYOS ★</span>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <span class="tagline">⚡ vibrant energy | limitless spirit ⚡</span>
+      </div>
+    </div>
+
+    <!-- decorative badges -->
+    <div class="badge-group">
+      <span class="badge">🎨 MODERN VISIONARY</span>
+      <span class="badge">🔥 COLORFUL AURA</span>
+      <span class="badge">💡 CREATIVE MIND</span>
+      <span class="badge">✨ UNIQUE VIBE</span>
+    </div>
+
+    <!-- dynamic message zone (js enhanced) -->
+    <div class="message-panel" id="messagePanel">
+      <div class="dynamic-message" id="mainMessage">
+        <span class="emoji-big">🌟</span>
+        <span id="messageText">YOU are the brilliance that sparks the universe!</span>
+        <span class="emoji-big">✨</span>
+      </div>
+    </div>
+
+    <!-- interactive buttons & joyful actions -->
+    <div class="interactive-zone">
+      <button class="cute-btn" id="inspireBtn">🌈 INSPIRE ME</button>
+      <button class="cute-btn" id="celebrateBtn">🎉 CELEBRATE VIBE</button>
+      <button class="cute-btn" id="magicBtn">🌀 MAGIC TOUCH</button>
+    </div>
+
+    <!-- dynamic counter / cheer meter -->
+    <div class="energy-meter">
+      <span>💖 PAK YOU count : </span>
+      <span class="click-counter">
+        <span class="counter-num" id="cheerCounter">0</span> cheers
+      </span>
+      <span style="margin-left: 0.5rem;">✨</span>
+      <span id="funFact" style="font-style: italic; max-width: 200px;">⭐ click for sparkles</span>
+    </div>
+
+    <div class="signature">
+      ✨ radiant tribute · always shining ✨
+    </div>
+  </main>
+
+  <script>
+    // ========== MODERN COLORFUL JS with deep personality ==========
+    // dynamic message pool for "PAK YOU KRISTOF GLENDALE BADAYOS"
+    const inspireMessages = [
+      { text: "⚡ PAK YOU, KRISTOF! Your energy electrifies every room you enter! ⚡", emoji: "⚡🔥" },
+      { text: "🌈 GLENDALE BADAYOS — a true rainbow in human form, spreading joy everywhere! 🌈", emoji: "🌈✨" },
+      { text: "🌟 KRISTOF, your potential has no limits — keep painting the world with your brilliance! 🌟", emoji: "🎨💫" },
+      { text: "🔊 PAK YOU! You are a masterpiece of courage, color and creativity! 🔊", emoji: "🎨🔥" },
+      { text: "💎 GLENDALE, like a rare gem — your uniqueness lights up the darkest corners. 💎", emoji: "💎✨" },
+      { text: "🚀 BADAYOS, the pioneer of new horizons — nothing can stop your vibrant destiny! 🚀", emoji: "🌠🤩" },
+      { text: "🎵 Your rhythm is unstoppable, Kristof — dance through life with fearless joy! 🎵", emoji: "💃🕺" },
+      { text: "💫 PAK YOU — you blend ambition and kindness like a true hero! 💫", emoji: "🦸‍♂️🌟" },
+      { text: "🌸 GLENDALE BADAYOS — a name that echoes strength, style and sincerity! 🌸", emoji: "🌺💪" },
+      { text: "✨ Every day you inspire, Kristof — keep rising and shining brighter! ✨", emoji: "🌞🌙" }
+    ];
+
+    const celebrateMessages = [
+      { text: "🎊 YAAAS! This is YOUR moment, Kristof Glendale! Let confessions of greatness fill the air! 🎊", emoji: "🎉🎈" },
+      { text: "🍾 CHEERS to the legendary BADAYOS — may your life be as vibrant as this palette! 🍾", emoji: "🥂🌈" },
+      { text: "🎶 *Epic beat drop* — celebrating YOU, Kristof, a modern icon of color and passion! 🎶", emoji: "🎧🔥" },
+      { text: "🎂 HAPPY VIBES only! PAK YOU KRISTOF — your journey is pure art! 🎂", emoji: "🎨🎁" },
+      { text: "🏆 GLENDALE is unstoppable! Raise the roof for the brightest star! 🏆", emoji: "🌟🙌" }
+    ];
+
+    const magicMessages = [
+      { text: "🌀✨ *sparkles intensifies* — KRISTOF GLENDALE, your aura just turned into a galaxy of dreams! ✨🌀", emoji: "🌌💫" },
+      { text: "⭐ MAGIC WORD: PAK YOU! Suddenly confetti rains and everything becomes extraordinary! ⭐", emoji: "🎊🪄" },
+      { text: "🪄✨ Abracadabra! Kristof, with a snap, your future glows neon bright! ✨🪄", emoji: "🔮🌈" },
+      { text: "💥 GLENDALE BADAYOS just cast a spell of endless creativity — watch the world bloom! 💥", emoji: "🌸🌟" },
+      { text: "🎩✨ POOF! A thousand butterflies of good fortune swirl around KRISTOF — you're magic! 🎩✨", emoji: "🦋✨" }
+    ];
+
+    // DOM elements
+    const messageTextSpan = document.getElementById('messageText');
+    const messageEmojiLeft = document.querySelector('#mainMessage .emoji-big:first-child');
+    const messageEmojiRight = document.querySelector('#mainMessage .emoji-big:last-child');
+    const cheerCounterSpan = document.getElementById('cheerCounter');
+    const funFactSpan = document.getElementById('funFact');
+    const inspireBtn = document.getElementById('inspireBtn');
+    const celebrateBtn = document.getElementById('celebrateBtn');
+    const magicBtn = document.getElementById('magicBtn');
+    const mainMsgContainer = document.getElementById('mainMessage');
+
+    // counter data
+    let cheerCount = 0;
+    let funFactIndex = 0;
+
+    // Helper: update message with text and left/right emojis
+    function setMessage(messageObj) {
+      if (!messageObj) return;
+      let finalText = messageObj.text;
+      let emojiString = messageObj.emoji || "✨";
+      // support emoji split for two sides style
+      let leftEmoji = emojiString[0] || "✨";
+      let rightEmoji = emojiString.length > 1 ? emojiString[emojiString.length-1] : (emojiString[1] || "✨");
+      // but we want beautiful presentation: sometimes emoji string can be 2-3 chars
+      if (emojiString.length >= 2) {
+        leftEmoji = emojiString.substring(0,1);
+        rightEmoji = emojiString.substring(emojiString.length-1);
+      } else {
+        leftEmoji = emojiString;
+        rightEmoji = emojiString;
+      }
+      if (messageEmojiLeft) messageEmojiLeft.innerText = leftEmoji;
+      if (messageEmojiRight) messageEmojiRight.innerText = rightEmoji;
+      messageTextSpan.innerText = finalText;
+      
+      // add subtle pulse animation on text
+      messageTextSpan.classList.add('pulse-effect');
+      setTimeout(() => {
+        if (messageTextSpan) messageTextSpan.classList.remove('pulse-effect');
+      }, 600);
+    }
+
+    // random item from array helper
+    function randomFrom(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    // increments click counter and updates fun fact rotating
+    function incrementCheerAndFact() {
+      cheerCount++;
+      cheerCounterSpan.innerText = cheerCount;
+      
+      // update fun fact based on counter (colorful trivia)
+      const funFactsList = [
+        "🌈 Did you know? Kristof means 'bearer of Christ' — a bright leader!",
+        "💡 Glendale: 'valley of shining water' — so much light!",
+        "🎨 BADAYOS signifies fierce determination and creative roots.",
+        "🔥 PAK YOU is all about vibrant confidence and style!",
+        "✨ Spark Fact: Every cheer adds a new color to the universe!",
+        "🌟 Kristof Glendale radiates next-level awesomeness daily.",
+        "⭐ FUN: The name 'Kristof' appears in many legends — adventure calls!",
+        "🌀 Modern design + you = perfect match! Keep shining!"
+      ];
+      // rotate facts
+      funFactIndex = (funFactIndex + 1) % funFactsList.length;
+      funFactSpan.innerText = funFactsList[funFactIndex];
+      // also add mini bounce effect to counter
+      const counterSpanEl = document.getElementById('cheerCounter');
+      if (counterSpanEl) {
+        counterSpanEl.style.transform = 'scale(1.2)';
+        setTimeout(() => { if(counterSpanEl) counterSpanEl.style.transform = 'scale(1)'; }, 180);
+      }
+    }
+
+    // action: pick random message from given set, increment counter, and setMessage
+    function actionWithSetMessage(messageSet, baseExtraMessage = null) {
+      let selected = randomFrom(messageSet);
+      // we can add a little dynamic personalization for extra fun
+      incrementCheerAndFact();
+      setMessage(selected);
+      // additional micro animation for button and panel
+      const panel = document.getElementById('messagePanel');
+      panel.style.transform = 'scale(0.99)';
+      setTimeout(() => { if(panel) panel.style.transform = ''; }, 120);
+    }
+
+    // also special periodic background color flicker? just little fun effect
+    function randomGlowEffect() {
+      const card = document.querySelector('.hero-card');
+      if (!card) return;
+      card.style.transition = 'box-shadow 0.2s';
+      card.style.boxShadow = '0 0 20px rgba(255, 180, 100, 0.6), 0 30px 55px rgba(0,0,0,0.4)';
+      setTimeout(() => {
+        if (card) card.style.boxShadow = '';
+      }, 300);
+    }
+
+    // custom message on inspire + extra warmth always displays PAK YOU with name
+    function inspireAction() {
+      let baseMessage = randomFrom(inspireMessages);
+      // enhance with name for coherence: ensure we mention full identity
+      if (!baseMessage.text.toLowerCase().includes('kristof') && !baseMessage.text.toLowerCase().includes('glendale')) {
+        baseMessage.text = baseMessage.text.replace('you', 'you, KRISTOF GLENDALE BADAYOS');
+      }
+      actionWithSetMessage([baseMessage]);
+      randomGlowEffect();
+    }
+
+    function celebrateAction() {
+      let selected = randomFrom(celebrateMessages);
+      // enrich with name mixture
+      if (!selected.text.includes('Kristof')) {
+        selected.text = selected.text.replace(/legendary/i, 'legendary Kristof Glendale');
+      }
+      actionWithSetMessage([selected]);
+      // create a mini confetti-like effect using simple DOM sprites? we can simulate with colorful alert? no, better create flying word effect.
+      createTemporarySparkle();
+      randomGlowEffect();
+    }
+
+    function magicAction() {
+      let selected = randomFrom(magicMessages);
+      if (!selected.text.toLowerCase().includes('glendale')) {
+        selected.text = selected.text + " ✨ For GLENDALE BADAYOS! ✨";
+      }
+      actionWithSetMessage([selected]);
+      // additional rainbow effect for fun
+      document.body.style.animation = 'bgFlash 0.4s ease';
+      setTimeout(() => { document.body.style.animation = ''; }, 400);
+      randomGlowEffect();
+    }
+
+    // extra style for quick flash
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `
+      @keyframes bgFlash {
+        0% { background: #0b0f1c; }
+        50% { background: #2a2350; }
+        100% { background: #0b0f1c; }
+      }
+      .sparkle-particle {
+        position: fixed;
+        pointer-events: none;
+        font-size: 1.4rem;
+        z-index: 999;
+        animation: floatUp 0.8s ease-out forwards;
+      }
+      @keyframes floatUp {
+        0% { opacity: 1; transform: translateY(0px) rotate(0deg); }
+        100% { opacity: 0; transform: translateY(-70px) rotate(20deg); }
+      }
+    `;
+    document.head.appendChild(styleSheet);
+
+    function createTemporarySparkle() {
+      for (let i = 0; i < 12; i++) {
+        const spark = document.createElement('div');
+        spark.className = 'sparkle-particle';
+        spark.innerText = ['✨', '⭐', '🌟', '💫', '🎉', '🌈', '🔥', '💖'][Math.floor(Math.random() * 8)];
+        spark.style.left = Math.random() * window.innerWidth + 'px';
+        spark.style.top = window.innerHeight - 80 + 'px';
+        spark.style.fontSize = (1 + Math.random() * 1.2) + 'rem';
+        spark.style.position = 'fixed';
+        document.body.appendChild(spark);
+        setTimeout(() => spark.remove(), 800);
+      }
+    }
+
+    // auto-rotate greeting on load? adds fresh start
+    function initialWarmMessage() {
+      const introMsg = {
+        text: "✨ PAK YOU, KRISTOF GLENDALE BADAYOS! You are the definition of modern color & soul! ✨",
+        emoji: "🌈🌟"
+      };
+      setMessage(introMsg);
+      cheerCounterSpan.innerText = "0";
+      funFactSpan.innerText = "⭐ tap any button and spread joy! ⭐";
+    }
+
+    // attach event listeners
+    inspireBtn.addEventListener('click', inspireAction);
+    celebrateBtn.addEventListener('click', celebrateAction);
+    magicBtn.addEventListener('click', magicAction);
+    
+    // additional hover effect dynamic
+    const allBtns = document.querySelectorAll('.cute-btn');
+    allBtns.forEach(btn => {
+      btn.addEventListener('mouseenter', (e) => {
+        btn.style.transform = 'translateY(-3px)';
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+    
+    // initial load message
+    initialWarmMessage();
+
+    // Optional: extra surprise after double click on title? just for delight
+    const titleGlow = document.querySelector('.glow-name');
+    if(titleGlow) {
+      titleGlow.addEventListener('dblclick', () => {
+        createTemporarySparkle();
+        setMessage({ text: "🔥 DOUBLE TAP 🔥 — KRISTOF GLENDALE IS A SUPERSTAR! ✨", emoji: "💥🎇" });
+        incrementCheerAndFact();
+        randomGlowEffect();
+      });
+    }
+
+    // add a floating effect to the main card when window resets
+    window.addEventListener('resize', () => {});
+    console.log("✨ PAK YOU KRISTOF GLENDALE BADAYOS | Modern Colorful Experience Loaded ✨");
+  </script>
+</body>
+</html>
